@@ -13,8 +13,6 @@ class UsersController extends AppController
     public $helpers = array("DatePicker");
 
 public function add(){
-
-    $this->layout = 'non_nav';
     
     $options_bar = $this->Bar->find('list',array(
         'callbacks' => false,
@@ -371,6 +369,16 @@ public function admin_barlist(){
         $bar = $this->Paginator->paginate('User');
         $this->set(compact('bar'));
 
+}
+
+public function landing(){
+    $this->autoLayout = false;
+    $this->autoRender = true;
+}
+
+public function userpolicy() {
+    $this->autoLayout = false;
+    $this->autoRender = true;
 }
 
 
